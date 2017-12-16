@@ -65,7 +65,7 @@ class ClientHandler {
     static boolean isInList(String login){
         try {
             Connect.getOut().writeUTF("/inlist " + login);
-            if (Connect.getIn().readUTF().equals("/e_ok")) {
+            if (Connect.getIn().readUTF().equals("/existsok")) {
                 return true;
             }
         } catch (IOException e) {

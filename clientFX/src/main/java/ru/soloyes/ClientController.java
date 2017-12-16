@@ -66,7 +66,7 @@ public class ClientController implements Initializable{
 
     public void clickOnList(MouseEvent mouseEvent) {
         if  (mouseEvent.getClickCount() == 2){
-            inArea.appendText("/w /"+ currentUsers.getSelectionModel().getSelectedItem() + " ");
+            inArea.appendText("@"+ currentUsers.getSelectionModel().getSelectedItem() + " ");
             inArea.requestFocus();
         }
     }

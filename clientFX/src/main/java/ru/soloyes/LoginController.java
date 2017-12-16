@@ -40,6 +40,7 @@ public class LoginController {
                     @Override
                     public void handle(ActionEvent event) {
                         RootsController.mainScene.setRoot(RootsController.getScenes().get("client"));
+                        //Start new Thread for conversation here
                         new ClientHandler(loginField.getText(), passwordField.getText());
                     }
                 });

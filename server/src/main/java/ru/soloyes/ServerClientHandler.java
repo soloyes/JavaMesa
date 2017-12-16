@@ -33,11 +33,11 @@ public class ServerClientHandler {
                     for (;;) {
                         String msg = in.readUTF();
                         if (msg.startsWith("/inlist")){
-                            String exists = "/e_ok";
+                            String exists = "/existsok";
                             if (server.getClients().size() != 0){
                                 for (ServerClientHandler s:server.getClients()) {
                                     if (s.getName().equals(msg.split(" ")[1])){
-                                        exists = "/e_nok";
+                                        exists = "/existsnok";
                                         break;
                                     }
                                 }
@@ -53,7 +53,7 @@ public class ServerClientHandler {
                             continue;
                         }
 
-                        if (msg.startsWith("/w")){
+                        if (msg.startsWith("@")){
                             server.unicast(ServerClientHandler.this, msg);
                         }
                         else {

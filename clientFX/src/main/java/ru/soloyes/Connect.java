@@ -17,19 +17,19 @@ class Connect {
 
     private static boolean isConnected = false;
 
-    public static DataInputStream getIn() {
+    static DataInputStream getIn() {
         return in;
     }
 
-    public static DataOutputStream getOut() {
+    static DataOutputStream getOut() {
         return out;
     }
 
-    public static Socket getSocket() {
+    static Socket getSocket() {
         return socket;
     }
 
-    public static boolean isIsConnected() {
+    static boolean isIsConnected() {
         return isConnected;
     }
 

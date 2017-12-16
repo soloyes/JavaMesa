@@ -46,30 +46,38 @@ public class Server {
     }
 
     private void refreshList(){
-        StringBuilder stringBuilder = new StringBuilder("/clientlist");
+        StringBuilder clientlist = new StringBuilder("/clientlist");
         for (ServerClientHandler s : clients) {
-            stringBuilder.append(" ").append(s.getName());
+            clientlist.append(" ").append(s.getName());
         }
         for (ServerClientHandler s : clients) {
-            s.sendMsg(stringBuilder.toString());
+            s.sendMsg(clientlist.toString());
         }
     }
 
     void broadcast(ServerClientHandler client, String msg){
+        StringBuilder tail_msg = new StringBuilder(": ").append(msg);
         for (ServerClientHandler s : clients) {
-            s.sendMsg(client.getName() + ": " + msg);
+            s.sendMsg(client.getName() + tail_msg);
         }
     }
 
     void unicast(ServerClientHandler client, String msg){
+        String[] split_msg = msg.split(" ",2);
+        String final_msg = "";
+        if (split_msg.length > 1) {
+            final_msg = split_msg[1];
+        }
+        String target = split_msg[0].replaceFirst("@","");
+        StringBuilder tail_msg = new StringBuilder(": ").append(final_msg);
+
         for (ServerClientHandler s : clients) {
-            String[] umsg = msg.split(" ",2);
-            String[] rmsg = umsg[1].split(" ",2);
-            if (rmsg[0].replaceAll("/", "").equals(s.getName())) {
-                s.sendMsg(client.getName() + ": " + rmsg[1]);
-                if (!(rmsg[0].replaceAll("/", "").equals(client.getName()))) {
-                    client.sendMsg(client.getName() + ": " + rmsg[1]);
+            if (target.equals(s.getName())) {
+                s.sendMsg(client.getName() + tail_msg);
+                if (!(target.equals(client.getName()))) {
+                    client.sendMsg(client.getName() + tail_msg);
                 }
+                break;
             }
         }
     }
