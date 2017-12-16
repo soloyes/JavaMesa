@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="center" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.ClientController">
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <HBox VBox.vgrow="ALWAYS">
+                <TextArea fx:id="outArea" id="outArea" editable="false" focusTraversable="false" promptText="No any message" style="-fx-focus-color: transparent;" HBox.hgrow="ALWAYS">
+                </TextArea>
+            </HBox>
+            <HBox>
+                <TextArea fx:id="inArea" onKeyPressed="#commitField" style="-fx-focus-color: transparent" HBox.hgrow="ALWAYS">
+                </TextArea>
+            </HBox>
+            <HBox>
+                <Button fx:id="commitButton" maxWidth="Infinity" onMousePressed="#commitButton" stylesheets="@button.css" text="Send (Ctrl+Enter)" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+        <VBox minWidth="150" HBox.hgrow="ALWAYS">
+            <HBox VBox.vgrow="ALWAYS">
+                <ListView fx:id="currentUsers" focusTraversable="false" HBox.hgrow="ALWAYS" onMouseClicked="#clickOnList">
+                </ListView>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

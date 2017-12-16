@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.LoginController">
+    <center>
+        <VBox>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                <GridPane alignment="CENTER">
+
+                    <TextField fx:id="loginField" promptText="Login">
+                        <GridPane.margin>
+                            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </GridPane.margin>
+                    </TextField>
+
+                    <PasswordField fx:id="passwordField" promptText="Password" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </GridPane.margin>
+                    </PasswordField>
+
+                    <GridPane GridPane.rowIndex="2">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+                        <Button fx:id="commitButton" maxWidth="Infinity" onMousePressed="#loginButton" stylesheets="@button.css" text="Login">
+                            <GridPane.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button fx:id="regButton" maxWidth="Infinity" onMousePressed="#regButton" stylesheets="@button.css" text="Registration" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                            </GridPane.margin>
+                        </Button>
+                    </GridPane>
+
+                    <TextField id="connField" alignment="CENTER" promptText="ServerIP:PORT" text="localhost:8888" GridPane.rowIndex="3" editable="false">
+                        <GridPane.margin>
+                            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </GridPane.margin>
+                    </TextField>
+
+               <Button id="connButton" maxWidth="Infinity" onMousePressed="#connButton" stylesheets="@button.css" text="Connect" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                    </GridPane.margin>
+               </Button>
+                    
+            </GridPane>
+            </HBox>
+
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                <TextArea fx:id="logArea" id="logArea" editable="false" focusTraversable="false" mouseTransparent="true"/>
+            </HBox>
+      </VBox>
+    </center>
+
+   <left>
+      <HBox visible="false" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <HBox visible="false" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <HBox visible="false" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <HBox visible="false" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
