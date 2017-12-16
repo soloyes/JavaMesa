@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

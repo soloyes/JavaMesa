@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

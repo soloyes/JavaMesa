@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;

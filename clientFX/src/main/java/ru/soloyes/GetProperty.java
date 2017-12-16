@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import java.io.IOException;
 import java.util.Properties;

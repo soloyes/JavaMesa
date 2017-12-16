@@ -1,10 +1,8 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Arrays;
 import java.util.Vector;
 
 public class Server {

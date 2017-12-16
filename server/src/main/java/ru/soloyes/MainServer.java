@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 public class MainServer {
     public static void main(String[] args) {

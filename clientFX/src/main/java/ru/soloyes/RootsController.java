@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

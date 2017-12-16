@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package ru.soloyes;
 
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
